@@ -7,15 +7,16 @@ import "./styles/main.scss";
 import "rsuite/dist/rsuite.min.css";
 import Signin from "./pages/Signin";
 import PrivateRoute from "./component/PrivateRoute";
+import PublicRoute from "./component/PublicRoute";
 
 function App() {
   return (
     <>
       <Router>
         <Switch>
-          <Route path="/signin">
+          <PublicRoute path="/signin">
             <Signin />
-          </Route>
+          </PublicRoute>
           {/* this will be a private route that means it can be accessed only if we
           are loggedin or signin */}
           <PrivateRoute path="/">
