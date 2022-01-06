@@ -2,7 +2,8 @@ import React from "react";
 import { Redirect, Route } from "react-router";
 //children will give all the components which is present inside privateroute and routeprops gives the route properties used in privateroute like to exact
 const PrivateRoute = ({ children, ...routeProps }) => {
-  const profile = false;
+  //it is false but for now we are opening it to true
+  const profile = true;
   //if profile is false we will be on the signin page for eternity i mean if we are not logged in or signin
   if (!profile) {
     //redirect will send us the page which is given in to=""
