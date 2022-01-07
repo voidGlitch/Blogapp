@@ -1,7 +1,7 @@
 import { useState } from "react";
 import blogContext from "./blogContext";
 
-const NoteState = ({ children }) => {
+const BlogState = ({ children }) => {
   //data
   // const s1 = {
   //   name: "Shreshthav Bisht",
@@ -57,4 +57,4 @@ const NoteState = ({ children }) => {
   );
 };
 
-export default NoteState;
+export default BlogState;

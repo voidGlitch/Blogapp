@@ -34,6 +34,9 @@ function App() {
             <BrandNavbar />
             <Blog />
           </PrivateRoute>
+          <PrivateRoute path="/">
+            <BrandNavbar />
+          </PrivateRoute>
         </Switch>
       </BlogState>
     </>

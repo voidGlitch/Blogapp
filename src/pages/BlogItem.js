@@ -15,6 +15,7 @@ const BlogItem = (props) => {
         <div className="card-body">
           <h5 className="card-title">{blog.title}</h5>
           <p className="card-text">{blog.description}</p>
+          <p className="card-text">{blog.tag}</p>
         </div>
       </div>
     </div>

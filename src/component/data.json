@@ -1,0 +1,72 @@
+[
+  {
+    "label": "Adventure",
+    "value": "Adventure",
+    "role": "Master"
+  },
+  {
+    "label": "Travel",
+    "value": "Travel",
+    "role": "Master"
+  },
+  {
+    "label": "Sports",
+    "value": "Sports",
+    "role": "Master"
+  },
+  {
+    "label": "Beach",
+    "value": "Beach",
+    "role": "Master"
+  },
+  {
+    "label": "Downtown",
+    "value": "Downtown",
+    "role": "Master"
+  },
+  {
+    "label": "HillStation",
+    "value": "HillStation",
+    "role": "Developer"
+  },
+  {
+    "label": "City",
+    "value": "City",
+    "role": "Developer"
+  },
+  {
+    "label": "PlainGrounds",
+    "value": "PlainGrounds",
+    "role": "Developer"
+  },
+  {
+    "label": "International",
+    "value": "International",
+    "role": "Developer"
+  },
+  {
+    "label": "Roads",
+    "value": "Roads",
+    "role": "Developer"
+  },
+  {
+    "label": "Underwater",
+    "value": "Underwater",
+    "role": "Guest"
+  },
+  {
+    "label": "Tyrel",
+    "value": "Tyrel",
+    "role": "Guest"
+  },
+  {
+    "label": "Jaylen",
+    "value": "Jaylen",
+    "role": "Guest"
+  },
+  {
+    "label": "Rogelio",
+    "value": "Rogelio",
+    "role": "Guest"
+  }
+]
