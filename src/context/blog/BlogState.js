@@ -20,7 +20,7 @@ const BlogState = ({ children }) => {
   // };
   const BlogInitials = [
     {
-      _id: "61d5acd42ba0958336a4bd42",
+      _id: "61d5acd42ba0958336a4bd42sdsad",
       user: "61d5ac622ba0958336a4bd3e",
       title: "this is not rain updated",
       description: "this is not some kind of rain you know updated",
@@ -29,7 +29,25 @@ const BlogState = ({ children }) => {
       __v: 0,
     },
     {
-      _id: "61d5adde2ba0958336a4bd5f",
+      _id: "61d5acd42ba0958336a4bd42ssasdd",
+      user: "61d5ac622ba0958336a4bd3e",
+      title: "this is not rain updated",
+      description: "this is not some kind of rain you know updated",
+      tag: "personal",
+      date: "2022-01-05T14:36:04.078Z",
+      __v: 0,
+    },
+    {
+      _id: "61d5acd42ba0958336a4bd42sssada",
+      user: "61d5ac622ba0958336a4bd3e",
+      title: "this is not rain updated",
+      description: "this is not some kind of rain you know updated",
+      tag: "personal",
+      date: "2022-01-05T14:36:04.078Z",
+      __v: 0,
+    },
+    {
+      _id: "61d5adde2ba0958336a4bsadd5fasd",
       user: "61d5ac622ba0958336a4bd3e",
       title: "this is miku",
       description: "this is me",
@@ -38,7 +56,7 @@ const BlogState = ({ children }) => {
       __v: 0,
     },
     {
-      _id: "61d5adfa2ba0958336a4bd61",
+      _id: "61d5adfa2ba0958336asad4bdsd61",
       user: "61d5ac622ba0958336a4bd3e",
       title: "this is spidy",
       description: "this is your friendly neighbourhood spiderman",

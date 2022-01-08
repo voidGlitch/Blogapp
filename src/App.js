@@ -10,6 +10,7 @@ import PrivateRoute from "./component/PrivateRoute";
 import PublicRoute from "./component/PublicRoute";
 import BlogState from "./context/blog/BlogState";
 import Blog from "./pages/Blog";
+import Alert from "./pages/Alert";
 
 function App() {
   return (
@@ -24,18 +25,22 @@ function App() {
           are loggedin or signin */}
           <PrivateRoute path="/home">
             <BrandNavbar />
+            <Alert message="this is amazing" />
             <Home />
           </PrivateRoute>
           <PrivateRoute path="/about">
             <BrandNavbar />
+            <Alert message="this is amazing" />
             <About />
           </PrivateRoute>
           <PrivateRoute path="/blog">
             <BrandNavbar />
+            <Alert message="this is amazing" />
             <Blog />
           </PrivateRoute>
           <PrivateRoute path="/">
             <BrandNavbar />
+            <Alert message="this is amazing" />
           </PrivateRoute>
         </Switch>
       </BlogState>

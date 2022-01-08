@@ -13,7 +13,7 @@ const Blog = () => {
         <br></br>
         {/* mapping all of the element which is present in the state or i can say fetch all Blog */}
         {state.map((blog) => {
-          return <BlogItem blog={blog} />;
+          return <BlogItem key={blog._id} blog={blog} />;
         })}
       </div>
     </>

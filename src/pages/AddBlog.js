@@ -22,7 +22,7 @@ const AddBlog = () => {
   };
   return (
     <>
-      <form className="rs-form rs-form-vertical rs-form-fixed-width">
+      <form className="rs-form rs-form-vertical rs-form-fixed-width ml-50">
         <div className="rs-form-group " role="group">
           <label
             id="name-control-label"
