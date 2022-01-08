@@ -5,14 +5,14 @@ import BlogItem from "./BlogItem";
 
 const Blog = () => {
   const context = useContext(blogContext);
-  const { state, setState } = context;
+  const { notes } = context;
   return (
     <>
       <div className="text-center row">
         <h1>Your Blog</h1>
         <br></br>
         {/* mapping all of the element which is present in the state or i can say fetch all Blog */}
-        {state.map((blog) => {
+        {notes.map((blog) => {
           return <BlogItem key={blog._id} blog={blog} />;
         })}
       </div>

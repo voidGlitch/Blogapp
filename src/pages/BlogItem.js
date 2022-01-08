@@ -5,18 +5,20 @@ import GearIcon from "@rsuite/icons/Gear";
 const BlogItem = (props) => {
   const { blog } = props;
   return (
-    <div className="col-md-3">
+    <div className="container col-md-4 ">
       <Panel
         shaded
         bordered
         bodyFill
-        style={{ display: "inline-block", width: 250, height: 500 }}
+        style={{ display: "inline-block", width: 400, height: 700 }}
         className="mt-2"
       >
-        <img src="https://via.placeholder.com/240x240" height="200" alt="not" />
+        <img src={blog.image} height="400" alt="not" />
         <Panel header={blog.title}>
           <p>
             <small>{blog.description}</small>
+            <br></br>
+            <small>{blog.tag}</small>
           </p>
           <div className="text-right mt-3">
             <i className="fas fa-trash mx-1 i-point"></i>

@@ -2,71 +2,76 @@
   {
     "label": "Adventure",
     "value": "Adventure",
+    "image": "https://wallpaperbat.com/img/295711-adventure-desktop-wallpaper-top-free-adventure-desktop.jpg",
     "role": "Master"
   },
   {
     "label": "Travel",
     "value": "Travel",
+    "image": "https://www.pixelstalk.net/wp-content/uploads/2016/08/Travel-Images-For-Desktop.jpg",
     "role": "Master"
   },
   {
     "label": "Sports",
     "value": "Sports",
+    "image": "https://www.teahub.io/photos/full/283-2832555_sports-wallpapers-hd-sports-background.jpg",
+
     "role": "Master"
   },
   {
     "label": "Beach",
     "value": "Beach",
+    "image": "https://wallpaperaccess.com/full/865178.jpg",
+
     "role": "Master"
   },
   {
     "label": "Downtown",
     "value": "Downtown",
+    "image": "https://wallpaperaccess.com/full/1275578.jpg",
+
     "role": "Master"
   },
   {
     "label": "HillStation",
     "value": "HillStation",
+    "image": "https://wallpapercave.com/wp/wp2337116.jpg",
+
     "role": "Developer"
   },
   {
     "label": "City",
     "value": "City",
+    "image": "https://wallpapercave.com/wp/VdgOIsr.jpg",
+
     "role": "Developer"
   },
   {
     "label": "PlainGrounds",
     "value": "PlainGrounds",
+    "image": "https://www.teahub.io/photos/full/330-3306010_old-olive-trees-and-the-ground-wallpaper-ground.jpg",
+
     "role": "Developer"
   },
   {
     "label": "International",
     "value": "International",
+    "image": "https://wallpapercave.com/wp/wp1835443.jpg",
+
     "role": "Developer"
   },
   {
     "label": "Roads",
     "value": "Roads",
+    "image": "https://wallpaperaccess.com/full/1079101.jpg",
+
     "role": "Developer"
   },
   {
     "label": "Underwater",
     "value": "Underwater",
-    "role": "Guest"
-  },
-  {
-    "label": "Tyrel",
-    "value": "Tyrel",
-    "role": "Guest"
-  },
-  {
-    "label": "Jaylen",
-    "value": "Jaylen",
-    "role": "Guest"
-  },
-  {
-    "label": "Rogelio",
-    "value": "Rogelio",
+    "image": "https://www.pixelstalk.net/wp-content/uploads/2016/06/HD-underwater-fish-wallpaper.jpg",
+
     "role": "Guest"
   }
 ]

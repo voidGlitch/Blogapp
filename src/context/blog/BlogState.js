@@ -65,11 +65,36 @@ const BlogState = ({ children }) => {
       __v: 0,
     },
   ];
-  const [state, setState] = useState(BlogInitials);
+  const [notes, setNotes] = useState(BlogInitials);
+
+  // Add note
+  const addNote = (title, description, tag, image) => {
+    //Call from the API TODO
+    let blog = [
+      {
+        _id: "61d5adfa2ba0958336asad4sdbdsd61",
+        user: "61d5ac622ba0958336a4bd3e",
+        title: title,
+        description: description,
+        tag: tag,
+        image: image,
+        date: "2022-01-05T14:40:58.486Z",
+        __v: 0,
+      },
+    ];
+
+    setNotes(notes.concat(blog));
+  };
+
+  // Delete note
+  const deleteNote = () => {};
+  // Edit note
+
+  const editNote = () => {};
 
   return (
     // Every Context object comes with a Provider React component that allows consuming components to subscribe to context changes
-    <blogContext.Provider value={{ state, setState }}>
+    <blogContext.Provider value={{ notes, addNote, deleteNote, editNote }}>
       {children}
     </blogContext.Provider>
   );

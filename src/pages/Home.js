@@ -11,8 +11,8 @@ const Home = () => {
     <div
       className=" mt-2 d-flex "
       style={{
-        // backgroundImage: `url(${"https://wallpapercave.com/wp/wp3172699.gif"})`,
-        color: "black",
+        backgroundImage: `url(${"https://images.employerschoicescreening.com/wp-content/uploads/AdobeStock_235931235-scaled.jpeg"})`,
+        color: "white",
         backgroundPosition: "center",
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
