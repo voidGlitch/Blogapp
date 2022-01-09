@@ -37,7 +37,7 @@ router.post(
   fetchuser,
   async (req, res) => {
     //gets the title desc and tag from the request body
-    const { title, description, tag } = req.body;
+    const { title, description, tag, image } = req.body;
     //returns an error if the validation doesn't pass
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
@@ -49,6 +49,7 @@ router.post(
         title,
         description,
         tag,
+        image,
         user: req.user.id,
       });
       // saves the blog to the database

@@ -1,11 +1,14 @@
 const connectToMongo = require("./database");
 const express = require("express");
 
+var cors = require("cors");
+
 connectToMongo();
 const app = express();
 const port = 5000;
 
 //if we want to use req.body in the thunderclient we use this middleware
+app.use(cors());
 app.use(express.json());
 
 //available routes
