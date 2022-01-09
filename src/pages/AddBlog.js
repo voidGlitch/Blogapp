@@ -17,8 +17,10 @@ const AddBlog = () => {
   });
 
   const onclicked = (e) => {
+    //prevent the page reloding on click
     e.preventDefault();
     console.log(blog);
+    //sending all the data of the state to the api
     addNote(blog.title, blog.description, blog.tag, blog.image);
   };
   const handlechange = (e) => {
@@ -26,6 +28,7 @@ const AddBlog = () => {
   };
 
   const Setimg = (value) => {
+    //matching the value and appending the image and tag in the existing blog state
     if (value === "Adventure") {
       setBlog({ ...blog, image: data[0].image, tag: value });
     }

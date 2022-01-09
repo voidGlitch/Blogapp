@@ -18,86 +18,98 @@ const BlogState = ({ children }) => {
   //     });
   //   }, 3000);
   // };
-  const BlogInitials = [
-    {
-      _id: "61d5acd42ba0958336a4bd42sdsad",
-      user: "61d5ac622ba0958336a4bd3e",
-      title: "this is not rain updated",
-      description: "this is not some kind of rain you know updated",
-      tag: "personal",
-      date: "2022-01-05T14:36:04.078Z",
-      __v: 0,
-    },
-    {
-      _id: "61d5acd42ba0958336a4bd42ssasdd",
-      user: "61d5ac622ba0958336a4bd3e",
-      title: "this is not rain updated",
-      description: "this is not some kind of rain you know updated",
-      tag: "personal",
-      date: "2022-01-05T14:36:04.078Z",
-      __v: 0,
-    },
-    {
-      _id: "61d5acd42ba0958336a4bd42sssada",
-      user: "61d5ac622ba0958336a4bd3e",
-      title: "this is not rain updated",
-      description: "this is not some kind of rain you know updated",
-      tag: "personal",
-      date: "2022-01-05T14:36:04.078Z",
-      __v: 0,
-    },
-    {
-      _id: "61d5adde2ba0958336a4bsadd5fasd",
-      user: "61d5ac622ba0958336a4bd3e",
-      title: "this is miku",
-      description: "this is me",
-      tag: "personal",
-      date: "2022-01-05T14:40:30.168Z",
-      __v: 0,
-    },
-    {
-      _id: "61d5adfa2ba0958336asad4bdsd61",
-      user: "61d5ac622ba0958336a4bd3e",
-      title: "this is spidy",
-      description: "this is your friendly neighbourhood spiderman",
-      tag: "personal",
-      date: "2022-01-05T14:40:58.486Z",
-      __v: 0,
-    },
-  ];
-  const [notes, setNotes] = useState(BlogInitials);
+  const host = "http://localhost:5000";
+  const BlogInitials = [];
+  const [Blogs, setBlogs] = useState(BlogInitials);
+
+  //Fetch all Blog
+  const getBlog = async () => {
+    const response = await fetch(`${host}/api/blog/getallblog`, {
+      method: "GET",
+      headers: {
+        "Content-type": "application/json",
+        "auth-token":
+          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjFkNWFjNjIyYmEwOTU4MzM2YTRiZDNlIn0sImlhdCI6MTY0MTM5MzMyN30.QQhlSgogE3RVnKftfwr97THHuCYFDVj90auTEWsECT4",
+      },
+    });
+    const json = await response.json();
+    console.log(json);
+    //takes all the blogs from the user of auth token and set it to the state then all the data is fetch by the components by context
+    setBlogs(json);
+  };
 
   // Add note
-  const addNote = (title, description, tag, image) => {
+  const addNote = async (title, description, tag, image) => {
     //Call from the API TODO
-    let blog = [
-      {
-        _id: "61d5adfa2ba0958336asad4sdbdsd61",
-        user: "61d5ac622ba0958336a4bd3e",
-        title: title,
-        description: description,
-        tag: tag,
-        image: image,
-        date: "2022-01-05T14:40:58.486Z",
-        __v: 0,
+    const response = await fetch(`${host}/api/blog/addblog`, {
+      method: "POST",
+      headers: {
+        "Content-type": "application/json",
+        "auth-token":
+          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjFkNWFjNjIyYmEwOTU4MzM2YTRiZDNlIn0sImlhdCI6MTY0MTM5MzMyN30.QQhlSgogE3RVnKftfwr97THHuCYFDVj90auTEWsECT4",
       },
-    ];
-
-    setNotes(notes.concat(blog));
+      body: JSON.stringify({ title, description, tag, image }),
+    });
+    const blog = await response.json();
+    //setthe blogs which comes from the body which then coverts into json format and then concat it
+    //The concat() method is used to merge two or more arrays. This method does not change the existing arrays, but instead returns a new array.
+    setBlogs(Blogs.concat(blog));
   };
 
   // Delete note
-  const deleteNote = () => {};
+  const deleteNote = async (id) => {
+    //Call from the API TODO
+    const response = await fetch(`${host}/api/blog/deleteblog/${id}`, {
+      method: "DELETE",
+      headers: {
+        "Content-type": "application/json",
+        "auth-token":
+          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjFkNWFjNjIyYmEwOTU4MzM2YTRiZDNlIn0sImlhdCI6MTY0MTM5MzMyN30.QQhlSgogE3RVnKftfwr97THHuCYFDVj90auTEWsECT4",
+      },
+    });
+    const json = await response.json();
+    console.log(json);
+
+    console.log("deleting the node with id" + id);
+    const newBlog = Blogs.filter((blog) => {
+      return blog._id !== id;
+    });
+    setBlogs(newBlog);
+  };
+
   // Edit note
 
-  const editNote = () => {};
+  const editNote = async (id, title, description, tag, image) => {
+    const response = await fetch(`${host}/api/blog/addblog`, {
+      method: "POST",
+      headers: {
+        "Content-type": "application/json",
+        "auth-token":
+          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjFkNWFjNjIyYmEwOTU4MzM2YTRiZDNlIn0sImlhdCI6MTY0MTM5MzMyN30.QQhlSgogE3RVnKftfwr97THHuCYFDVj90auTEWsECT4",
+      },
+      body: JSON.stringify({ title, description, tag, image }),
+    });
+    // const json = response.json();
 
+    //taking all the blog item from the blog state
+    for (let index = 0; index < Blogs.length; index++) {
+      const element = Blogs[index];
+      //if the edit id matches the id of the current blog then change all th things inside
+      if (element._id === id) {
+        element.title = title;
+        element.description = description;
+        element.tag = tag;
+        element.image = image;
+      }
+    }
+  };
   return (
     // Every Context object comes with a Provider React component that allows consuming components to subscribe to context changes
-    <blogContext.Provider value={{ notes, addNote, deleteNote, editNote }}>
+    <blogContext.Provider
+      value={{ Blogs, addNote, deleteNote, editNote, getBlog }}
+    >
       {children}
     </blogContext.Provider>
   );
 };
-
 export default BlogState;

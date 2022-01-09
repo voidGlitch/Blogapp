@@ -3,7 +3,9 @@ import React from "react";
 import { Link, useLocation } from "react-router-dom";
 
 const BrandNavbar = () => {
+  // gets the location of user where it is currently in route of like :/home
   let location = useLocation();
+
   return (
     //imported the navbar from rsuite but it doesn't seems to be fine so extract the code from source code and put the Link to in it
     <>
