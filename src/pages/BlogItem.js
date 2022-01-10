@@ -9,30 +9,29 @@ const BlogItem = (props) => {
   const { deleteNote } = context;
   const { blog } = props;
   return (
-    <div className="container col-md-4 ">
+    <div className="container  ">
       <Panel
         shaded
         bordered
         bodyFill
-        style={{ display: "inline-block", width: 400, height: 700 }}
-        className="mt-2 mx-2"
+        style={{ display: "inline-block", width: 750, height: 600 }}
+        className="mt-2 mx-2 "
       >
-        <img src={blog.image} height="250" width="350" alt="not" />
-        <Panel header={blog.title}>
+        <img src={blog.image} height="250" width="600" alt="not" />
+        <Panel header={blog.title} className="font-bolder italic">
           <p>
-            <small>{blog.description}</small>
+            <small className="mx-auto">{blog.description}</small>
             <br></br>
             <small>{blog.tag}</small>
           </p>
-          <div className="text-align-center  mt-3">
+          <div className="mt-3 text-end">
+            <Modal blog={blog} />
             <i
-              className="fas fa-trash mx-1 i-point"
+              className="fas fa-trash i-point"
               onClick={() => {
                 deleteNote(blog._id);
               }}
             ></i>
-
-            <Modal blog={blog} />
           </div>
         </Panel>
       </Panel>

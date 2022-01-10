@@ -64,7 +64,7 @@ router.post(
 
 //Route:3 PUT : Update an existing blog using : Put "/api/blog/updateblog/:id". Login requires
 router.put("/updateblog/:id", fetchuser, async (req, res) => {
-  const { title, description, tag } = req.body;
+  const { title, description, tag, image } = req.body;
   try {
     //gets the title desc and tag from the request body
 
@@ -82,10 +82,13 @@ router.put("/updateblog/:id", fetchuser, async (req, res) => {
     if (tag) {
       newblog.tag = tag;
     }
+    if (image) {
+      newblog.image = image;
+    }
 
     //find the existing blog and update it
     //req.params.id refers to the id which the blog we want to update like"_id": "61d47594ac45331d11ffc303",other blogs have other id's
-    let blog = await Blog.findById({ _id: req.params.id });
+    let blog = await Blog.findById(req.params.id);
     if (!blog) {
       return res.status(401).send("Not founded");
     }

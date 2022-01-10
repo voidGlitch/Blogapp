@@ -80,8 +80,9 @@ const BlogState = ({ children }) => {
   // Edit note
 
   const editNote = async (id, title, description, tag, image) => {
-    const response = await fetch(`${host}/api/blog/addblog`, {
-      method: "POST",
+    //API CALL
+    const response = await fetch(`${host}/api/blog/updateblog/${id}`, {
+      method: "PUT",
       headers: {
         "Content-type": "application/json",
         "auth-token":
@@ -89,19 +90,23 @@ const BlogState = ({ children }) => {
       },
       body: JSON.stringify({ title, description, tag, image }),
     });
-    // const json = response.json();
+    const json = await response.json();
+    console.log("Edit", json);
+    let newBlog = JSON.parse(JSON.stringify(Blogs));
 
     //taking all the blog item from the blog state
-    for (let index = 0; index < Blogs.length; index++) {
-      const element = Blogs[index];
+    for (let index = 0; index < newBlog.length; index++) {
+      const element = newBlog[index];
       //if the edit id matches the id of the current blog then change all th things inside
       if (element._id === id) {
-        element.title = title;
-        element.description = description;
-        element.tag = tag;
-        element.image = image;
+        newBlog[index].title = title;
+        newBlog[index].description = description;
+        newBlog[index].tag = tag;
+        newBlog[index].image = image;
+        break;
       }
     }
+    setBlogs(newBlog);
   };
   return (
     // Every Context object comes with a Provider React component that allows consuming components to subscribe to context changes
