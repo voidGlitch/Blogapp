@@ -16,6 +16,9 @@ const Blog = () => {
       <div className="text-center row">
         <h1>Your Blog</h1>
         <br></br>
+        <div className="container mx-3">
+          {Blogs.length === 0 && "There is no Blog to show"}
+        </div>
         {/* mapping all of the element which is present in the state or i can say fetch all Blog */}
         {Blogs.map((blog) => {
           return <BlogItem key={blog._id} blog={blog} />;

@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import React, { useContext, useState, useEffect } from "react";
+import React, { useContext, useState } from "react";
 
 import blogContext from "../context/blog/blogContext";
 
@@ -12,16 +12,16 @@ const AddBlog = () => {
   const [blog, setBlog] = useState({
     title: "",
     description: "",
-    tag: "",
-    image: "https://www.wallpaperuse.com/wallp/98-989473_m.jpg",
+    tag: "Select",
+    image: "",
   });
 
   const onclicked = (e) => {
     //prevent the page reloding on click
     e.preventDefault();
-    console.log(blog);
     //sending all the data of the state to the api
     addNote(blog.title, blog.description, blog.tag, blog.image);
+    setBlog({ title: "", description: "", tag: "Select", image: "" });
   };
   const handlechange = (e) => {
     setBlog({ ...blog, [e.target.name]: e.target.value });
@@ -86,6 +86,7 @@ const AddBlog = () => {
               className="rs-input"
               type="text"
               id="title"
+              value={blog.title}
               onChange={handlechange}
             />
           </div>
@@ -106,6 +107,7 @@ const AddBlog = () => {
               className="rs-input"
               type="textarea"
               id="description"
+              value={blog.description}
               style={{ width: "500px", height: "150px" }}
               onChange={handlechange}
             />
@@ -120,7 +122,7 @@ const AddBlog = () => {
           <br></br>
           <SelectPicker
             data={data}
-            // defaultValue={2}
+            placeholder={blog.tag}
             valueKey="value"
             labelKey="label"
             style={{ width: 500 }}
@@ -136,6 +138,11 @@ const AddBlog = () => {
               type="button"
               className="rs-btn rs-btn-primary"
               onClick={onclicked}
+              disabled={
+                blog.title.length < 5 ||
+                blog.description < 5 ||
+                blog.image === ""
+              }
             >
               Submit
               <span className="rs-ripple-pond">

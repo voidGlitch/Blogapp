@@ -136,6 +136,9 @@ const Modal = (props) => {
           <Drawer.Actions>
             <Button onClick={() => setOpen(false)}>Cancel</Button>
             <Button
+              disabled={
+                blogs.etitle.length < 5 || blogs.edescription.length < 5
+              }
               onClick={(e) => {
                 setOpen(false);
                 onclicked(e);
@@ -168,6 +171,8 @@ const Modal = (props) => {
                     className="rs-input"
                     type="text"
                     onChange={handlechange}
+                    required
+                    minLength={5}
                   />
                 </div>
 
@@ -191,6 +196,8 @@ const Modal = (props) => {
                     //setting the value so that user can edit where it prev end
                     value={blogs.edescription}
                     onChange={handlechange}
+                    required
+                    minLength={5}
                   />
                   <span id="name-help-text" className="rs-form-help-text">
                     Description is required
@@ -203,7 +210,6 @@ const Modal = (props) => {
                 <br></br>
                 <SelectPicker
                   data={data}
-                  placeholder={blogs.etag}
                   valueKey="value"
                   labelKey="label"
                   style={{ width: 500 }}

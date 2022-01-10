@@ -22,7 +22,7 @@ const BlogItem = (props) => {
           <p>
             <small className="mx-auto">{blog.description}</small>
             <br></br>
-            <small>{blog.tag}</small>
+            <small>#{blog.tag}</small>
           </p>
           <div className="mt-3 text-end">
             <Modal blog={blog} />
