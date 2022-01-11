@@ -20,6 +20,21 @@ router.get(
     }
   }
 );
+//Route:1 GET : Getting Entire Blog from the db using : Get "/api/blog/getblog". Login requires
+router.get(
+  "/getblog",
+
+  async (req, res) => {
+    try {
+      //gets the users id from the fetchuser function and get all the blog of that particular user
+      const blog = await Blog.find({ common: "blog" });
+      res.json(blog);
+    } catch (error) {
+      console.log(error.message);
+      res.status(500).send("internal server error occured");
+    }
+  }
+);
 
 //Route:2 POST : ADD a new blog using : POST "/api/blog/addblog". Login requires
 router.post(
@@ -37,7 +52,7 @@ router.post(
   fetchuser,
   async (req, res) => {
     //gets the title desc and tag from the request body
-    const { title, description, tag, image } = req.body;
+    const { title, description, tag, image, more } = req.body;
     //returns an error if the validation doesn't pass
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
@@ -50,6 +65,7 @@ router.post(
         description,
         tag,
         image,
+        more,
         user: req.user.id,
       });
       // saves the blog to the database

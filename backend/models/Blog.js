@@ -26,6 +26,14 @@ const blogSchema = new Schema({
     type: Date,
     default: Date.now,
   },
+  common: {
+    type: String,
+    default: "blog",
+  },
+  more: {
+    type: String,
+    default: "",
+  },
 });
 
 //exports the model

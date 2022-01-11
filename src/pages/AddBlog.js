@@ -14,14 +14,15 @@ const AddBlog = () => {
     description: "",
     tag: "Select",
     image: "",
+    more: "",
   });
 
   const onclicked = (e) => {
     //prevent the page reloding on click
     e.preventDefault();
     //sending all the data of the state to the api
-    addNote(blog.title, blog.description, blog.tag, blog.image);
-    setBlog({ title: "", description: "", tag: "Select", image: "" });
+    addNote(blog.title, blog.description, blog.tag, blog.image, blog.more);
+    setBlog({ title: "", description: "", tag: "Select", image: "", more: "" });
   };
   const handlechange = (e) => {
     setBlog({ ...blog, [e.target.name]: e.target.value });
@@ -130,6 +131,31 @@ const AddBlog = () => {
               Setimg(value);
             }}
           />
+        </div>
+        <div className="rs-form-group mt-2" role="group">
+          <label
+            id="name-control-label"
+            htmlFor="more"
+            className="rs-form-control-label"
+          >
+            Reference
+          </label>
+
+          <div className="rs-form-control rs-form-control-wrapper">
+            <input
+              aria-labelledby="name-control-label"
+              aria-describedby="name-help-text"
+              name="more"
+              className="rs-input"
+              type="text"
+              id="more"
+              value={blog.more}
+              onChange={handlechange}
+            />
+          </div>
+          <span id="name-help-text" className="rs-form-help-text">
+            User dependent
+          </span>
         </div>
 
         <div className="rs-form-group mt-3" role="group">

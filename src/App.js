@@ -11,6 +11,7 @@ import PublicRoute from "./component/PublicRoute";
 import BlogState from "./context/blog/BlogState";
 import Blog from "./pages/Blog";
 import Alert from "./pages/Alert";
+import ReactBlog from "./pages/ReactBlog";
 
 function App() {
   return (
@@ -41,6 +42,7 @@ function App() {
           <PrivateRoute path="/">
             <BrandNavbar />
             <Alert message="this is amazing" />
+            <ReactBlog />
           </PrivateRoute>
         </Switch>
       </BlogState>

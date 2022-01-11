@@ -37,9 +37,22 @@ const BlogState = ({ children }) => {
     //takes all the blogs from the user of auth token and set it to the state then all the data is fetch by the components by context
     setBlogs(json);
   };
+  //Fetch Entire Blog
+  const getallBlog = async () => {
+    const response = await fetch(`${host}/api/blog/getblog`, {
+      method: "GET",
+      headers: {
+        "Content-type": "application/json",
+      },
+    });
+    const json = await response.json();
+    console.log(json);
+    //takes all the blogs from the user of auth token and set it to the state then all the data is fetch by the components by context
+    setBlogs(json);
+  };
 
   // Add note
-  const addNote = async (title, description, tag, image) => {
+  const addNote = async (title, description, tag, image, more) => {
     //Call from the API TODO
     const response = await fetch(`${host}/api/blog/addblog`, {
       method: "POST",
@@ -48,7 +61,7 @@ const BlogState = ({ children }) => {
         "auth-token":
           "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjFkNWFjNjIyYmEwOTU4MzM2YTRiZDNlIn0sImlhdCI6MTY0MTM5MzMyN30.QQhlSgogE3RVnKftfwr97THHuCYFDVj90auTEWsECT4",
       },
-      body: JSON.stringify({ title, description, tag, image }),
+      body: JSON.stringify({ title, description, tag, image, more }),
     });
     const blog = await response.json();
     //setthe blogs which comes from the body which then coverts into json format and then concat it
@@ -111,7 +124,7 @@ const BlogState = ({ children }) => {
   return (
     // Every Context object comes with a Provider React component that allows consuming components to subscribe to context changes
     <blogContext.Provider
-      value={{ Blogs, addNote, deleteNote, editNote, getBlog }}
+      value={{ Blogs, addNote, deleteNote, editNote, getBlog, getallBlog }}
     >
       {children}
     </blogContext.Provider>
