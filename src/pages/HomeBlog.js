@@ -11,13 +11,13 @@ const HomeBlog = (props) => {
         shaded
         bordered
         bodyFill
-        style={{ display: "inline-block", width: 1000, height: 400 }}
+        style={{ display: "inline-block", width: 1000, height: 350 }}
         className="mt-3 mx-2 "
       >
         <img
           src={blog.image}
-          className="rounded float-start"
-          height="250"
+          className="rounded float-start mt-3 ml-3"
+          height="300"
           width="500"
           alt="not"
         />

@@ -3,7 +3,7 @@ import React, { useContext, useEffect } from "react";
 import blogContext from "../context/blog/blogContext";
 import BlogItem from "./BlogItem";
 
-const Blog = () => {
+const Blog = (props) => {
   const context = useContext(blogContext);
   const { Blogs, getBlog } = context;
   useEffect(() => {
@@ -21,7 +21,9 @@ const Blog = () => {
         </div>
         {/* mapping all of the element which is present in the state or i can say fetch all Blog */}
         {Blogs.map((blog) => {
-          return <BlogItem key={blog._id} blog={blog} />;
+          return (
+            <BlogItem key={blog._id} blog={blog} showalert={props.showalert} />
+          );
         })}
       </div>
     </>

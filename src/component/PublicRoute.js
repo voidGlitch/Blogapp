@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Redirect, Route } from "react-router";
+import profileContext from "../context/blog/profileContext";
 //children will give all the components which is present inside privateroute and routeprops gives the route properties used in privateroute like to exact
 const PublicRoute = ({ children, ...routeProps }) => {
-  const profile = false;
+  const context = useContext(profileContext);
+  const { profile } = context;
+
   //if profile is false we will be on the signin page for eternity i mean if we are not logged in or signin
   if (profile) {
     //redirect will send us the page which is given in to=""

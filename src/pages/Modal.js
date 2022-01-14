@@ -9,7 +9,7 @@ const Modal = (props) => {
   const context = useContext(blogContext);
   const { editNote } = context;
   //pass the prop blog comes from the blogitem which give us the value of current node
-  const { blog } = props;
+  const { blog, showalert } = props;
   // these are value to open and close the drawer comes with rsuite
   const [open, setOpen] = useState(false);
   const [placement, setPlacement] = useState();
@@ -37,6 +37,7 @@ const Modal = (props) => {
       blogs.etag,
       blogs.image
     );
+    showalert("Updated successfully", "success");
   };
 
   //handle the change in value of title and desc and set the value to edit blog state

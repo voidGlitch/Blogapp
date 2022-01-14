@@ -4,12 +4,12 @@
 
 import AddBlog from "./AddBlog";
 
-const Home = () => {
+const Home = (props) => {
   //using the context and destructuing the components send in the value of blogcontext
 
   return (
     <div
-      className=" mt-2 d-flex "
+      className="d-flex"
       style={{
         backgroundImage: `url(${"https://images.employerschoicescreening.com/wp-content/uploads/AdobeStock_235931235-scaled.jpeg"})`,
         color: "white",
@@ -18,8 +18,10 @@ const Home = () => {
         backgroundRepeat: "no-repeat",
       }}
     >
-      <h3>Add a Blog or memories</h3>
-      <AddBlog />
+      <div className="d-flex mt-30 ml-200">
+        <h3>Add a Blog or memories</h3>
+        <AddBlog showalert={props.showalert} />
+      </div>
     </div>
   );
 };

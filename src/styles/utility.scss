@@ -187,6 +187,9 @@ $indent_50: 50px;
 .mt-mid {
   margin-top: 70px;
 }
+.mt-30 {
+  margin-top: 30px;
+}
 
 .mt-1 {
   margin-top: $indent_1;
@@ -226,6 +229,9 @@ $indent_50: 50px;
 .ml-50 {
   margin-left: $indent_50;
 }
+.ml-200 {
+  margin-left: 200px;
+}
 
 .mr-1 {
   margin-right: $indent_1;
@@ -237,6 +243,9 @@ $indent_50: 50px;
 
 .mr-3 {
   margin-right: $indent_3;
+}
+.mr-inh {
+  margin-right: inherit;
 }
 
 .pt-1 {

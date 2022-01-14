@@ -7,7 +7,7 @@ import Modal from "./Modal";
 const BlogItem = (props) => {
   const context = useContext(blogContext);
   const { deleteNote } = context;
-  const { blog } = props;
+  const { blog, showalert } = props;
   return (
     <div className="container  ">
       <Panel
@@ -17,7 +17,13 @@ const BlogItem = (props) => {
         style={{ display: "inline-block", width: 750, height: 600 }}
         className="mt-2 mx-2 "
       >
-        <img src={blog.image} height="250" width="600" alt="not" />
+        <img
+          src={blog.image}
+          height="350"
+          width="600"
+          alt="not"
+          className="mt-3"
+        />
         <Panel header={blog.title} className="font-bolder italic">
           <p>
             <small className="mx-auto">{blog.description}</small>
@@ -25,11 +31,12 @@ const BlogItem = (props) => {
             <small>#{blog.tag}</small>
           </p>
           <div className="mt-3 text-end">
-            <Modal blog={blog} />
+            <Modal blog={blog} showalert={showalert} />
             <i
               className="fas fa-trash i-point"
               onClick={() => {
                 deleteNote(blog._id);
+                showalert("Deleted successfully", "success");
               }}
             ></i>
           </div>

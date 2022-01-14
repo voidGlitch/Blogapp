@@ -28,8 +28,7 @@ const BlogState = ({ children }) => {
       method: "GET",
       headers: {
         "Content-type": "application/json",
-        "auth-token":
-          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjFkNWFjNjIyYmEwOTU4MzM2YTRiZDNlIn0sImlhdCI6MTY0MTM5MzMyN30.QQhlSgogE3RVnKftfwr97THHuCYFDVj90auTEWsECT4",
+        "auth-token": localStorage.getItem("token"),
       },
     });
     const json = await response.json();
@@ -58,8 +57,7 @@ const BlogState = ({ children }) => {
       method: "POST",
       headers: {
         "Content-type": "application/json",
-        "auth-token":
-          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjFkNWFjNjIyYmEwOTU4MzM2YTRiZDNlIn0sImlhdCI6MTY0MTM5MzMyN30.QQhlSgogE3RVnKftfwr97THHuCYFDVj90auTEWsECT4",
+        "auth-token": localStorage.getItem("token"),
       },
       body: JSON.stringify({ title, description, tag, image, more }),
     });
@@ -76,8 +74,7 @@ const BlogState = ({ children }) => {
       method: "DELETE",
       headers: {
         "Content-type": "application/json",
-        "auth-token":
-          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjFkNWFjNjIyYmEwOTU4MzM2YTRiZDNlIn0sImlhdCI6MTY0MTM5MzMyN30.QQhlSgogE3RVnKftfwr97THHuCYFDVj90auTEWsECT4",
+        "auth-token": localStorage.getItem("token"),
       },
     });
     const json = await response.json();
@@ -98,8 +95,7 @@ const BlogState = ({ children }) => {
       method: "PUT",
       headers: {
         "Content-type": "application/json",
-        "auth-token":
-          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjFkNWFjNjIyYmEwOTU4MzM2YTRiZDNlIn0sImlhdCI6MTY0MTM5MzMyN30.QQhlSgogE3RVnKftfwr97THHuCYFDVj90auTEWsECT4",
+        "auth-token": localStorage.getItem("token"),
       },
       body: JSON.stringify({ title, description, tag, image }),
     });

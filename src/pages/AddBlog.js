@@ -6,7 +6,7 @@ import blogContext from "../context/blog/blogContext";
 import { SelectPicker } from "rsuite";
 import data from "../component/data.json";
 
-const AddBlog = () => {
+const AddBlog = (props) => {
   const context = useContext(blogContext);
   const { addNote } = context;
   const [blog, setBlog] = useState({
@@ -22,6 +22,7 @@ const AddBlog = () => {
     e.preventDefault();
     //sending all the data of the state to the api
     addNote(blog.title, blog.description, blog.tag, blog.image, blog.more);
+    props.showalert("Blog Added successfully", "success");
     setBlog({ title: "", description: "", tag: "Select", image: "", more: "" });
   };
   const handlechange = (e) => {
