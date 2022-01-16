@@ -21,7 +21,6 @@ const Login = (props) => {
     });
     const loggedin = await response.json();
 
-    console.log(loggedin);
     if (loggedin.success) {
       props.setprogress(60);
       props.showalert("Successfully logged in", "success");
@@ -45,7 +44,7 @@ const Login = (props) => {
   const onclicked = (e) => {
     //prevent the page reloding on click
     e.preventDefault();
-    console.log("clicked", loggedin);
+
     props.setprogress(30);
     //sending all the data of the state to the api
     login(loggedin.email, loggedin.password);
@@ -77,6 +76,7 @@ const Login = (props) => {
               style={{
                 width: "500px",
               }}
+              autoComplete="username"
             />
           </div>
           <div className="rs-form-group" role="group">
@@ -100,6 +100,7 @@ const Login = (props) => {
               style={{
                 width: "500px",
               }}
+              autoComplete="current-password"
             />
           </div>
           <div className="rs-form-group" role="group">

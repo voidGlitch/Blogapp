@@ -32,7 +32,7 @@ const AddBlog = (props) => {
         more: "",
       });
     } catch (error) {
-      console.log(error, "sorry some error occured");
+      console.log(error);
     }
   };
   const handlechange = (e) => {
@@ -124,7 +124,7 @@ const AddBlog = (props) => {
               onChange={handlechange}
             />
             <span id="name-help-text" className="rs-form-help-text">
-              Description is required
+              Description is required Max 100 characters
             </span>
           </div>
         </div>

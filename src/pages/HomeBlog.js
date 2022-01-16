@@ -4,6 +4,17 @@ import { Badge, Panel } from "rsuite";
 
 const HomeBlog = (props) => {
   const { blog } = props;
+  function isValidHttpUrl(string) {
+    let url;
+
+    try {
+      url = new URL(string);
+    } catch (_) {
+      return false;
+    }
+
+    return url.protocol === "http:" || url.protocol === "https:";
+  }
 
   return (
     <div className="container  ">
@@ -29,9 +40,15 @@ const HomeBlog = (props) => {
               <br></br>
               <small>#{blog.tag}</small>
               <br></br>
-              {blog.more && (
+
+              {isValidHttpUrl(blog.more) && (
                 <a href={blog.more} target="_blank" rel="noopener noreferrer">
-                  <button className="btn btn-primary">Know More</button>
+                  <button
+                    className="btn btn-primary mt-3"
+                    style={{ display: "inline" }}
+                  >
+                    Know More
+                  </button>
                 </a>
               )}
             </p>

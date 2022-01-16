@@ -25,7 +25,6 @@ const Signup = (props) => {
       body: JSON.stringify({ name, email, password }),
     });
     const json = await response.json();
-    console.log(json);
     if (json.success) {
       props.setprogress(60);
 
@@ -51,7 +50,7 @@ const Signup = (props) => {
     if (signnedup.password === signnedup.cpassword) {
       e.preventDefault();
       props.setprogress(30);
-      console.log("clicked", signnedup);
+
       //sending all the data of the state to the api
       signup(signnedup.name, signnedup.email, signnedup.password);
       setsignnedup({ name: "", email: "", password: "", cpassword: "" });
