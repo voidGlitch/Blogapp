@@ -22,14 +22,16 @@ const Login = (props) => {
     const loggedin = await response.json();
 
     console.log(loggedin);
-    props.showalert("Successfully logged in", "success");
     if (loggedin.success) {
+      props.setprogress(60);
+      props.showalert("Successfully logged in", "success");
+      props.setprogress(100);
       setTimeout(() => {
         isloggedin(true);
         setName(loggedin.name);
         setdate(loggedin.date);
         localStorage.setItem("token", loggedin.authtoken);
-      }, 1500);
+      }, 1000);
       // history.push("/");
     } else {
       props.showalert("Invalid credentails", "danger");
@@ -44,9 +46,11 @@ const Login = (props) => {
     //prevent the page reloding on click
     e.preventDefault();
     console.log("clicked", loggedin);
+    props.setprogress(30);
     //sending all the data of the state to the api
     login(loggedin.email, loggedin.password);
     setloggedin({ email: "", password: "" });
+    props.setprogress(40);
   };
   return (
     <>

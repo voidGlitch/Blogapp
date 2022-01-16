@@ -18,12 +18,22 @@ const AddBlog = (props) => {
   });
 
   const onclicked = (e) => {
-    //prevent the page reloding on click
-    e.preventDefault();
-    //sending all the data of the state to the api
-    addNote(blog.title, blog.description, blog.tag, blog.image, blog.more);
-    props.showalert("Blog Added successfully", "success");
-    setBlog({ title: "", description: "", tag: "Select", image: "", more: "" });
+    try {
+      //prevent the page reloding on click
+      e.preventDefault();
+      //sending all the data of the state to the api
+      addNote(blog.title, blog.description, blog.tag, blog.image, blog.more);
+      props.showalert("Blog Added successfully", "success");
+      setBlog({
+        title: "",
+        description: "",
+        tag: "Select",
+        image: "",
+        more: "",
+      });
+    } catch (error) {
+      console.log(error, "sorry some error occured");
+    }
   };
   const handlechange = (e) => {
     setBlog({ ...blog, [e.target.name]: e.target.value });

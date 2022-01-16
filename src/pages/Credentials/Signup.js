@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
-import { Button } from "rsuite";
+import { Button, Form } from "rsuite";
 import profileContext from "../../context/blog/profileContext";
 const Signup = (props) => {
   const host = "http://localhost:5000";
@@ -27,13 +27,16 @@ const Signup = (props) => {
     const json = await response.json();
     console.log(json);
     if (json.success) {
+      props.setprogress(60);
+
       props.showalert("Successfully created your account", "success");
+      props.setprogress(100);
       setTimeout(() => {
         signupcreds(true);
         setName(json.name);
         setdate(json.date);
         localStorage.setItem("token", signnedup.authtoken);
-      }, 1500);
+      }, 1000);
     } else {
       props.showalert(json.error, "danger");
     }
@@ -45,11 +48,17 @@ const Signup = (props) => {
 
   const onclicked = (e) => {
     //prevent the page reloding on click
-    e.preventDefault();
-    console.log("clicked", signnedup);
-    //sending all the data of the state to the api
-    signup(signnedup.name, signnedup.email, signnedup.password);
-    setsignnedup({ name: "", email: "", password: "", cpassword: "" });
+    if (signnedup.password === signnedup.cpassword) {
+      e.preventDefault();
+      props.setprogress(30);
+      console.log("clicked", signnedup);
+      //sending all the data of the state to the api
+      signup(signnedup.name, signnedup.email, signnedup.password);
+      setsignnedup({ name: "", email: "", password: "", cpassword: "" });
+      props.setprogress(40);
+    } else {
+      props.showalert("Password doesn't match with confirm password", "danger");
+    }
   };
   return (
     <>
@@ -64,6 +73,7 @@ const Signup = (props) => {
             >
               Name:
             </label>
+
             <input
               aria-labelledby="email-6-control-label"
               aria-describedby="email-6-help-text"
@@ -77,6 +87,9 @@ const Signup = (props) => {
                 width: "500px",
               }}
             />
+            <Form.HelpText tooltip>
+              Name should be atleast 3 characters
+            </Form.HelpText>
           </div>
           <div className="rs-form-group " role="group">
             <label
@@ -122,6 +135,9 @@ const Signup = (props) => {
                 width: "500px",
               }}
             />
+            <Form.HelpText tooltip>
+              Password is minimum 5 characters
+            </Form.HelpText>
           </div>
           <div className="rs-form-group" role="group">
             <label
@@ -152,6 +168,11 @@ const Signup = (props) => {
                 type="button"
                 className="rs-btn rs-btn-primary"
                 onClick={onclicked}
+                disabled={
+                  signnedup.name.length < 3 ||
+                  signnedup.email < 5 ||
+                  signnedup.password.length < 5
+                }
               >
                 Submit
                 <span className="rs-ripple-pond">

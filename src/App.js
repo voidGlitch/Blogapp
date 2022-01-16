@@ -16,9 +16,11 @@ import Login from "./pages/Credentials/Login";
 import Signup from "./pages/Credentials/Signup";
 import ProfileState from "./context/blog/ProfileState";
 import NewNav from "./pages/NewNav";
+import LoadingBar from "react-top-loading-bar";
 
 function App() {
   const [alert, setalert] = useState(null);
+  const [progress, setProgress] = useState(0);
 
   const showalert = (message, type) => {
     setalert({
@@ -30,6 +32,9 @@ function App() {
     }, 1500);
   };
 
+  const setprogress = (inc) => {
+    setProgress(inc);
+  };
   return (
     <>
       {/* providing the BlogState component down the component tree to all the components so that everone can access it */}
@@ -40,12 +45,14 @@ function App() {
               <Signin />
             </PublicRoute>
             <PublicRoute path="/login">
+              <LoadingBar height={3} color="#f11946" progress={progress} />
               <Alert alert={alert} />
-              <Login showalert={showalert} />
+              <Login showalert={showalert} setprogress={setprogress} />
             </PublicRoute>
             <PublicRoute path="/signup">
+              <LoadingBar height={3} color="#f11946" progress={progress} />
               <Alert alert={alert} />
-              <Signup showalert={showalert} />
+              <Signup showalert={showalert} setprogress={setprogress} />
             </PublicRoute>
             {/* this will be a private route that means it can be accessed only if we
           are loggedin or signin */}
