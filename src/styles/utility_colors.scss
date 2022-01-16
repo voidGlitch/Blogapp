@@ -25,6 +25,28 @@
 .bg-black-02 {
   background-color: rgba(0, 0, 0, 0.02);
 }
+
 .bg-grad {
   background-image: linear-gradient(to top, orange, rgb(223, 208, 1), pink);
 }
+.bg-grad2 {
+  background: rgb(7, 151, 14);
+}
+
+.button:hover {
+  background: #7513e4;
+  transform: scale(1.11);
+  // text-transform: uppercase;
+  transition-duration: 0.5s;
+}
+.bttn:hover {
+  border-radius: "12px";
+  // background-color: rgb(255, 51, 0);
+  transform: scale(1.1);
+
+  transition-duration: 1s;
+}
+// .hov:hover {
+//   transform: scale(1.1);
+//   transition-duration: 0.5s;
+// }

@@ -6,7 +6,7 @@ const Login = (props) => {
   const host = "http://localhost:5000";
   // const history = useHistory();
   const context = useContext(profileContext);
-  const { isloggedin, setName } = context;
+  const { isloggedin, setName, setdate } = context;
 
   const [loggedin, setloggedin] = useState({ email: "", password: "" });
 
@@ -20,12 +20,16 @@ const Login = (props) => {
       body: JSON.stringify({ email, password }),
     });
     const loggedin = await response.json();
+
     console.log(loggedin);
+    props.showalert("Successfully logged in", "success");
     if (loggedin.success) {
-      isloggedin(true);
-      setName(loggedin.name);
-      props.showalert("Logged in successfully", "success");
-      localStorage.setItem("token", loggedin.authtoken);
+      setTimeout(() => {
+        isloggedin(true);
+        setName(loggedin.name);
+        setdate(loggedin.date);
+        localStorage.setItem("token", loggedin.authtoken);
+      }, 1500);
       // history.push("/");
     } else {
       props.showalert("Invalid credentails", "danger");

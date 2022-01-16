@@ -1,12 +1,12 @@
 import React, { useContext, useState } from "react";
-import { Link, useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { Button } from "rsuite";
 import profileContext from "../../context/blog/profileContext";
 const Signup = (props) => {
   const host = "http://localhost:5000";
-  const history = useHistory();
+
   const context = useContext(profileContext);
-  const { signupcreds } = context;
+  const { signupcreds, setName, setdate } = context;
 
   const [signnedup, setsignnedup] = useState({
     name: "",
@@ -27,10 +27,13 @@ const Signup = (props) => {
     const json = await response.json();
     console.log(json);
     if (json.success) {
-      signupcreds(true);
-      localStorage.setItem("token", signnedup.authtoken);
       props.showalert("Successfully created your account", "success");
-      history.push("/");
+      setTimeout(() => {
+        signupcreds(true);
+        setName(json.name);
+        setdate(json.date);
+        localStorage.setItem("token", signnedup.authtoken);
+      }, 1500);
     } else {
       props.showalert(json.error, "danger");
     }

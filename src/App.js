@@ -29,6 +29,7 @@ function App() {
       setalert(null);
     }, 1500);
   };
+
   return (
     <>
       {/* providing the BlogState component down the component tree to all the components so that everone can access it */}
@@ -39,10 +40,12 @@ function App() {
               <Signin />
             </PublicRoute>
             <PublicRoute path="/login">
-              <Login />
+              <Alert alert={alert} />
+              <Login showalert={showalert} />
             </PublicRoute>
             <PublicRoute path="/signup">
-              <Signup />
+              <Alert alert={alert} />
+              <Signup showalert={showalert} />
             </PublicRoute>
             {/* this will be a private route that means it can be accessed only if we
           are loggedin or signin */}

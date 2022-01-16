@@ -50,10 +50,21 @@ router.post(
           id: user.id,
         },
       };
+      let name = {
+        username: user.name,
+      };
+      let date = {
+        userdate: user.date,
+      };
       //generates a secret authtoken through which we can identify the valid user is signing in
       const authtoken = jwt.sign(data, JWT_SECRET);
       success = true;
-      res.json({ success, authtoken: authtoken });
+      res.json({
+        name: name.username,
+        date: date.userdate,
+        success,
+        authtoken: authtoken,
+      });
       // res.json({ user });
     } catch (error) {
       console.log(error.message);
@@ -107,9 +118,17 @@ router.post(
       let name = {
         username: user.name,
       };
+      let date = {
+        userdate: user.date,
+      };
       const authtoken = jwt.sign(data, JWT_SECRET);
       success = true;
-      res.json({ name: name.username, success, authtoken: authtoken });
+      res.json({
+        name: name.username,
+        date: date.userdate,
+        success,
+        authtoken: authtoken,
+      });
     } catch (error) {
       console.log(error.message);
       res.status(500).send("internal server error occured");
