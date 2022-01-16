@@ -34,6 +34,7 @@ const Login = (props) => {
       // history.push("/");
     } else {
       props.showalert("Invalid credentails", "danger");
+      props.setprogress(0);
     }
   };
 
@@ -45,11 +46,9 @@ const Login = (props) => {
     //prevent the page reloding on click
     e.preventDefault();
 
-    props.setprogress(30);
     //sending all the data of the state to the api
     login(loggedin.email, loggedin.password);
     setloggedin({ email: "", password: "" });
-    props.setprogress(40);
   };
   return (
     <>

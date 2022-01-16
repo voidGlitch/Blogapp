@@ -32,7 +32,7 @@ const BlogState = ({ children }) => {
       },
     });
     const json = await response.json();
-    console.log(json);
+
     //takes all the blogs from the user of auth token and set it to the state then all the data is fetch by the components by context
     setBlogs(json);
   };

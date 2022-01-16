@@ -23,7 +23,6 @@ const Modal = (props) => {
   const clickedlogout = async () => {
     localStorage.removeItem("token");
     await isloggedin(false);
-    console.log("clicked");
   };
 
   const FaSvgIcon = ({ faIcon, ...rest }) => {

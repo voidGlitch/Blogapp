@@ -25,17 +25,19 @@ const Signup = (props) => {
       body: JSON.stringify({ name, email, password }),
     });
     const json = await response.json();
+
     if (json.success) {
       props.setprogress(60);
-
       props.showalert("Successfully created your account", "success");
       props.setprogress(100);
-      signupcreds(true);
-      setName(json.name);
-      setdate(json.date);
-      localStorage.setItem("token", signnedup.authtoken);
-      console.log(signnedup.authtoken);
+      setTimeout(() => {
+        signupcreds(true);
+        setName(json.name);
+        setdate(json.date);
+        localStorage.setItem("token", json.authtoken);
+      }, 1000);
     } else {
+      props.setprogress(0);
       props.showalert(json.error, "danger");
     }
   };
@@ -48,12 +50,10 @@ const Signup = (props) => {
     //prevent the page reloding on click
     if (signnedup.password === signnedup.cpassword) {
       e.preventDefault();
-      props.setprogress(30);
 
       //sending all the data of the state to the api
       signup(signnedup.name, signnedup.email, signnedup.password);
       setsignnedup({ name: "", email: "", password: "", cpassword: "" });
-      props.setprogress(40);
     } else {
       props.showalert("Password doesn't match with confirm password", "danger");
     }
