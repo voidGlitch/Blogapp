@@ -69,7 +69,7 @@ const Modal = (props) => {
             </p>
           </div>
         </Drawer.Body>
-        <div style={{ marginTop: "380px", paddingLeft: "60px" }}>
+        <div style={{ marginTop: "60px", paddingLeft: "60px" }}>
           <button
             style={{
               width: "90%",
