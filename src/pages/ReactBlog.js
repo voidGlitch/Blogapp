@@ -14,7 +14,7 @@ const ReactBlog = () => {
   return (
     <>
       <div className="text-center row">
-        <h1>Blog about React</h1>
+        <h1>Blog and Memories</h1>
         <br></br>
         {/* mapping all of the element which is present in the state or i can say fetch all Blog */}
         {Blogs.map((blog) => {
