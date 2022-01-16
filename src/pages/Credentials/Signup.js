@@ -30,12 +30,11 @@ const Signup = (props) => {
 
       props.showalert("Successfully created your account", "success");
       props.setprogress(100);
-      setTimeout(() => {
-        signupcreds(true);
-        setName(json.name);
-        setdate(json.date);
-        localStorage.setItem("token", signnedup.authtoken);
-      }, 1000);
+      signupcreds(true);
+      setName(json.name);
+      setdate(json.date);
+      localStorage.setItem("token", signnedup.authtoken);
+      console.log(signnedup.authtoken);
     } else {
       props.showalert(json.error, "danger");
     }
