@@ -1,8 +1,7 @@
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). \
-This project is also deployed in heroku at - https://blogs-app1.herokuapp.com/signin but the backend is not working so you have to \
-go to clone the repo and type in terminal npm run server
+
 
 ## Available Scripts
 
