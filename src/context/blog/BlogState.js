@@ -19,7 +19,7 @@ const BlogState = ({ children }) => {
   //     });
   //   }, 3000);
   // };
-  const host = "http://localhost:5000";
+  const host = "https://blogapp-backend-9z8l.onrender.com";
   const BlogInitials = [];
   const [Blogs, setBlogs] = useState(BlogInitials);
 

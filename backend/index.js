@@ -1,28 +1,26 @@
 require("dotenv").config();
 const connectToMongo = require("./database");
 const express = require("express");
-const cors = require("cors");
 
-const app = express();
-const port = process.env.PORT || 5000; // Use environment variable PORT for production
+var cors = require("cors");
 
-// MongoDB connection
 connectToMongo();
+const app = express();
+const port = 5000;
 
-// Middleware
+//if we want to use req.body in the thunderclient we use this middleware
 app.use(cors());
 app.use(express.json());
 
-// Available routes
+//available routes
 app.use("/api/auth", require("./routes/auth"));
 app.use("/api/blog", require("./routes/blog"));
 
-// Example route
+//just an example of a route
 app.get("/", (req, res) => {
   res.send("Hello World!");
 });
 
-// Start server
 app.listen(port, () => {
   console.log(`blog-app backend listening at http://localhost:${port}`);
 });

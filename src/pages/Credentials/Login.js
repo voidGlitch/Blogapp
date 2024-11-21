@@ -3,7 +3,7 @@ import React, { useContext, useState } from "react";
 import profileContext from "../../context/blog/profileContext";
 
 const Login = (props) => {
-  const host = "http://localhost:5000";
+  const host = "https://blogapp-backend-9z8l.onrender.com";
   // const history = useHistory();
   const context = useContext(profileContext);
   const { isloggedin, setName, setdate } = context;

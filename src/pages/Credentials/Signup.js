@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { Button, Form } from "rsuite";
 import profileContext from "../../context/blog/profileContext";
 const Signup = (props) => {
-  const host = "http://localhost:5000";
+  const host = "https://blogapp-backend-9z8l.onrender.com";
 
   const context = useContext(profileContext);
   const { signupcreds, setName, setdate } = context;
