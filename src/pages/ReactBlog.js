@@ -10,6 +10,7 @@ const ReactBlog = () => {
     getallBlog();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+  console.log(Blogs);
 
   return (
     <>
@@ -17,6 +18,7 @@ const ReactBlog = () => {
         <h1>Blog and Memories</h1>
         <br></br>
         {/* mapping all of the element which is present in the state or i can say fetch all Blog */}
+
         {Blogs.map((blog) => {
           return <HomeBlog key={blog._id} blog={blog} />;
         })}

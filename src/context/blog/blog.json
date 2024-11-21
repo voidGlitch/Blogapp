@@ -1,119 +1,101 @@
 [
   {
     "title": "Components and Props",
-    "description": "This function is a valid React component because it accepts a single “props” (which stands for properties) object argument with data and returns a React element. We call such components “function components” because they are literally JavaScript functions.Components can be passed as props , which stands for properties. Props are like function arguments, and you send them into the component as attributes. You will learn more about props",
-    "more": "https://reactjs.org/docs/components-and-props.html#:~:text=Conceptually%2C%20components%20are%20like%20JavaScript,should%20appear%20on%20the%20screen.",
+    "description": "This function is a valid React component because it accepts a single 'props' object argument with data and returns a React element. We call such components 'function components' because they are literally JavaScript functions. Components can be passed as props, which stand for properties. Props are like function arguments, and you send them into the component as attributes.",
+    "more": "https://reactjs.org/docs/components-and-props.html",
     "image": "https://i.stack.imgur.com/wqvF2.png",
     "common": "blog",
-    "date": {
-      "$date": "2022-01-11T07:47:26.061Z"
-    },
-    "tag": "React"
+    "date": "2022-01-11T07:47:26.061Z",
+    "tag": ["React", "Web Development", "JavaScript"]
   },
   {
-    "title": "State and lifecycle in react",
-    "description": " State is a plain JavaScript object used by React to represent an information about the component's current situation. It's managed in the component (just like any variable declared in a function and Each component in React has a lifecycle which you can monitor and manipulate during its three main phases. The three phases are: Mounting, Updating, and Unmounting.",
+    "title": "State and Lifecycle in React",
+    "description": "State is a plain JavaScript object used by React to represent information about the component's current situation. It's managed in the component, and each component has a lifecycle, which you can monitor and manipulate during its three main phases: Mounting, Updating, and Unmounting.",
     "more": "https://reactjs.org/docs/state-and-lifecycle.html",
     "image": "https://cdn-media-1.freecodecamp.org/images/1*_drMYY_IEgboMS4RhvC-lQ.png",
     "common": "blog",
-    "date": {
-      "$date": "2022-01-11T07:47:26.061Z"
-    },
-    "tag": "React"
+    "date": "2022-01-11T07:47:26.061Z",
+    "tag": ["React", "State Management", "Lifecycle"]
   },
   {
     "title": "Handling Events",
-    "description": "This function is a valid React component because it accepts a single “props” (which stands for properties) object argument with data and returns a React element. We call such components “function components” because they are literally JavaScript functions.Components can be passed as props , which stands for properties. Props are like function arguments, and you send them into the component as attributes. You will learn more about props",
+    "description": "React allows you to handle events like mouse clicks, form submissions, and keyboard presses using JSX syntax. You can pass event handlers as props to components and handle them in your functions.",
     "more": "https://reactjs.org/docs/handling-events.html",
     "image": "https://packt-type-cloud.s3.amazonaws.com/uploads/sites/3237/2018/12/3702ea56-01ab-4d19-8078-5e1cd4b0e080.png",
     "common": "blog",
-    "date": {
-      "$date": "2022-01-11T07:47:26.061Z"
-    },
-    "tag": "React"
+    "date": "2022-01-11T07:47:26.061Z",
+    "tag": ["React", "Event Handling", "JavaScript"]
   },
   {
     "title": "Conditional Rendering",
-    "description": "Conditional rendering is a term to describe the ability to render different user interface (UI) markup if a condition is true or false. In React, it allows us to render different elements or components based on a condition.",
+    "description": "Conditional rendering is the ability to render different UI based on conditions in React. It enables you to display certain elements or components if a condition is true, such as showing a loading spinner when data is being fetched.",
     "more": "https://reactjs.org/docs/conditional-rendering.html",
     "image": "https://res.cloudinary.com/practicaldev/image/fetch/s--GIbvW-CM--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/i/ww90ui11igvcmharnqw8.png",
     "common": "blog",
-    "date": {
-      "$date": "2022-01-11T07:47:26.061Z"
-    },
-    "tag": "React"
+    "date": "2022-01-11T07:47:26.061Z",
+    "tag": ["React", "Conditional Rendering", "UI"]
   },
   {
     "title": "Lists and Keys",
-    "description": "Keys help React distinguish items in a list. It helps React manage the changed items, new items added, or items removed from the list. We can output lists JavaScript arrays and the map() function. ... Below basic list component that accepts an array of number and outputs a list of elements.",
+    "description": "Keys help React distinguish items in a list, managing changed, new, or removed items. Lists can be rendered using JavaScript arrays and the map() function, which is often used for dynamically generating elements.",
     "more": "https://reactjs.org/docs/lists-and-keys.html",
     "image": "https://res.cloudinary.com/practicaldev/image/fetch/s--hnX3yG9g--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/i/06fdjldmptmed06wxxko.PNG",
     "common": "blog",
-    "date": {
-      "$date": "2022-01-11T07:47:26.061Z"
-    },
-    "tag": "React"
+    "date": "2022-01-11T07:47:26.061Z",
+    "tag": ["React", "Lists", "JavaScript"]
   },
   {
     "title": "Lifting State Up",
-    "description": "In React, sharing state is accomplished by moving it up to the closest common ancestor of the components that need it. This is called “lifting state up”. We will remove the local state from the TemperatureInput and move it into the Calculator instead.",
+    "description": "In React, sharing state is accomplished by moving it to the closest common ancestor of components that need it. This is called 'lifting state up,' a technique to make components communicate by sharing data.",
     "more": "https://reactjs.org/docs/lifting-state-up.html",
     "image": "https://miro.medium.com/max/1400/1*3DpOVY9vZpw2Ll4nWBFu9w.png",
     "common": "blog",
-    "date": {
-      "$date": "2022-01-11T07:47:26.061Z"
-    },
-    "tag": "React"
+    "date": "2022-01-11T07:47:26.061Z",
+    "tag": ["React", "State Management", "Component Communication"]
   },
   {
     "title": "Composition vs Inheritance",
-    "description": "Composition and inheritance are the approaches to use multiple components together in React. ... React recommend using composition instead of inheritance as much as possible and inheritance should be used in very specific cases only. Example to understand it - Let's say we have a component to input usernames",
+    "description": "React favors composition over inheritance for building components. Composition allows components to be combined in a flexible manner while inheritance is used in very specific cases.",
     "more": "https://reactjs.org/docs/composition-vs-inheritance.html",
     "image": "https://i2.wp.com/www.techdiscuss.net/wp-content/uploads/2021/01/composition-vs-inheritance.png?resize=640%2C384&ssl=1",
     "common": "blog",
-    "date": {
-      "$date": "2022-01-11T07:47:26.061Z"
-    },
-    "tag": "React"
+    "date": "2022-01-11T07:47:26.061Z",
+    "tag": ["React", "Component Design", "Composition"]
   },
   {
     "title": "Thinking in React",
-    "description": "React is, in our opinion, the premier way to build big, fast Web apps with JavaScript. It has scaled very well for us at Facebook and Instagram. In this document, we'll walk you through the thought process of building a searchable product data table using React. ..",
+    "description": "Thinking in React introduces the method of breaking down UIs into reusable components, offering strategies to effectively build apps by focusing on components and state management.",
     "more": "https://reactjs.org/docs/thinking-in-react.html",
     "image": "https://reactjs.org/static/9381f09e609723a8bb6e4ba1a7713b46/90cbd/thinking-in-react-components.png",
     "common": "blog",
-    "date": {
-      "$date": "2022-01-11T07:47:26.061Z"
-    },
-    "tag": "React"
+    "date": "2022-01-11T07:47:26.061Z",
+    "tag": ["React", "Component Architecture", "UI Design"]
   },
   {
-    "title": "context in react",
-    "description": "React Context is a method to pass props from parent to child component(s), by storing the props in a store(similar in Redux) and using these props from the store by child component(s) without actually passing them manually at each level of the component tree.",
+    "title": "Context in React",
+    "description": "React Context allows passing props between components without the need for prop drilling. It helps in managing shared state like user authentication or themes across different components.",
     "more": "https://reactjs.org/docs/context.html",
     "image": "https://miro.medium.com/max/1838/1*7gl-3SbI7MszLOCS1F953Q.jpeg",
-    "common": "blog"
+    "common": "blog",
+    "date": "2022-01-11T07:47:26.061Z",
+    "tag": ["React", "State Management", "Context API"]
   },
   {
     "title": "Using the useEffect Hook",
-    "description": "useEffect(callback, dependencies) is the hook that manages the side-effects in functional components. callback argument is a function to put the side-effect logic. dependencies is a list of dependencies of your side-effect: being props or state values.",
+    "description": "The useEffect hook in React manages side-effects in functional components. It allows you to perform actions like fetching data or updating the DOM after rendering.",
     "more": "https://reactjs.org/docs/hooks-effect.html",
     "image": "https://daveceddia.com/images/useEffect-hook.png",
     "common": "blog",
-    "date": {
-      "$date": "2022-01-11T07:47:26.061Z"
-    },
-    "tag": "React"
+    "date": "2022-01-11T07:47:26.061Z",
+    "tag": ["React", "useEffect", "Hooks"]
   },
   {
     "title": "Render Props",
-    "description": "The term “render prop” refers to a technique for sharing code between React components using a prop whose value is a function. A component with a render prop takes a function that returns a React element and calls it instead of implementing its own render logic.",
+    "description": "Render props is a technique in React to share code between components by passing a function as a prop, which allows for more flexible composition of components.",
     "more": "https://reactjs.org/docs/render-props.html",
     "image": "https://idkblogs.com/images/react/render_props/render_props.png",
     "common": "blog",
-    "date": {
-      "$date": "2022-01-11T07:47:26.061Z"
-    },
-    "tag": "React"
+    "date": "2022-01-11T07:47:26.061Z",
+    "tag": ["React", "Render Props", "Component Reusability"]
   }
 ]

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import profileContext from "./profileContext";
 
 const ProfileState = ({ children }) => {
@@ -6,30 +6,45 @@ const ProfileState = ({ children }) => {
   const [name, setname] = useState("");
   const [date, setDate] = useState("");
 
-  const isloggedin = (profile) => {
-    if (profile === true) {
+  // This effect checks if the user is logged in on initial load by looking at localStorage
+  useEffect(() => {
+    const storedProfile = localStorage.getItem("profile");
+    if (storedProfile) {
       setprofile(true);
     } else {
       setprofile(false);
     }
+  }, []);
+
+  const isloggedin = (profile) => {
+    if (profile === true) {
+      setprofile(true);
+      localStorage.setItem("profile", "true");
+    } else {
+      setprofile(false);
+      localStorage.removeItem("profile");
+    }
   };
+
   const signupcreds = (signup) => {
     if (signup === true) {
       setprofile(true);
+      localStorage.setItem("profile", "true");
     } else {
       setprofile(false);
+      localStorage.removeItem("profile");
     }
   };
 
   const setName = (hasname) => {
     setname(hasname);
   };
+
   const setdate = (hasdate) => {
     setDate(hasdate);
   };
 
   return (
-    // Every Context object comes with a Provider React component that allows consuming components to subscribe to context changes
     <profileContext.Provider
       value={{ profile, isloggedin, signupcreds, name, setName, date, setdate }}
     >

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import blogContext from "./blogContext";
+import blogData from "./blog.json";
 
 const BlogState = ({ children }) => {
   //data
@@ -24,6 +25,7 @@ const BlogState = ({ children }) => {
 
   //Fetch all Blog
   const getBlog = async () => {
+    console.log(localStorage.getItem("token"));
     const response = await fetch(`${host}/api/blog/getallblog`, {
       method: "GET",
       headers: {
@@ -46,7 +48,7 @@ const BlogState = ({ children }) => {
     });
     const json = await response.json();
     //takes all the blogs from the user of auth token and set it to the state then all the data is fetch by the components by context
-    setBlogs(json);
+    setBlogs(json.concat(blogData));
   };
 
   // Add note
@@ -63,7 +65,7 @@ const BlogState = ({ children }) => {
     const blog = await response.json();
     //setthe blogs which comes from the body which then coverts into json format and then concat it
     //The concat() method is used to merge two or more arrays. This method does not change the existing arrays, but instead returns a new array.
-    setBlogs(Blogs.concat(blog));
+    setBlogs(Blogs.concat(blog).concat(blogData));
   };
 
   // Delete note
@@ -82,7 +84,7 @@ const BlogState = ({ children }) => {
     const newBlog = Blogs.filter((blog) => {
       return blog._id !== id;
     });
-    setBlogs(newBlog);
+    setBlogs(newBlog.concat(blogData));
   };
 
   // Edit note
@@ -113,7 +115,7 @@ const BlogState = ({ children }) => {
         break;
       }
     }
-    setBlogs(newBlog);
+    setBlogs(newBlog.concat(blogData));
   };
   return (
     // Every Context object comes with a Provider React component that allows consuming components to subscribe to context changes

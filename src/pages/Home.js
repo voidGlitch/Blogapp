@@ -11,7 +11,7 @@ const Home = (props) => {
     <div
       className="d-flex"
       style={{
-        backgroundImage: `url(${"https://images.employerschoicescreening.com/wp-content/uploads/AdobeStock_235931235-scaled.jpeg"})`,
+        backgroundImage: `url(${"https://img.freepik.com/free-photo/solid-navy-blue-concrete-textured-wall_53876-124584.jpg"})`,
         color: "white",
         backgroundPosition: "center",
         backgroundSize: "cover",

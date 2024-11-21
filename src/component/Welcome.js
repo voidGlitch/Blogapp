@@ -24,6 +24,7 @@ const Modal = (props) => {
     localStorage.removeItem("token");
     await isloggedin(false);
   };
+  console.log(new Date(date).toGMTString())
 
   const FaSvgIcon = ({ faIcon, ...rest }) => {
     const { width, height, svgPathData } = faIcon;

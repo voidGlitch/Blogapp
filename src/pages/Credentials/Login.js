@@ -27,12 +27,13 @@ const Login = (props) => {
       props.setprogress(100);
       setTimeout(() => {
         isloggedin(true);
-        setName(loggedin.name);
-        setdate(loggedin.date);
-        localStorage.setItem("token", loggedin.authtoken);
       }, 1000);
-      // history.push("/");
+      setName(loggedin.name);
+      setdate(loggedin.date);
+      localStorage.setItem("token", loggedin.authtoken);
+      console.log("Successs");
     } else {
+      console.log("Failed");
       props.showalert("Invalid credentails", "danger");
       props.setprogress(0);
     }
